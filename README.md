@@ -184,6 +184,12 @@ Para llevar el modelo a operación real reduciendo la fricción técnica (*MLOps
 
 ---
 
+## Demo en línea
+
+La aplicación está desplegada y se puede probar directamente desde el navegador, sin instalar nada:
+
+**[https://huggingface.co/spaces/jbensadon/ypf-rop-predictor](https://huggingface.co/spaces/jbensadon/ypf-rop-predictor)**
+
 ## Requisitos y Ejecución
 
 ### 1. Preparar el entorno (una sola vez)
