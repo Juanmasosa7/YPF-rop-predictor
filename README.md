@@ -186,17 +186,35 @@ Para llevar el modelo a operación real reduciendo la fricción técnica (*MLOps
 
 ## Requisitos y Ejecución
 
-Instalación de paquetes para las notebooks:
+### 1. Preparar el entorno (una sola vez)
+
+Desde la carpeta raíz del repositorio, creá y activá un entorno virtual:
+```bash
+python -m venv venv
+source venv/Scripts/activate   # Git Bash en Windows (en Linux/Mac: source venv/bin/activate)
+```
+
+### 2. Instalar los paquetes para las notebooks
 ```bash
 pip install -r requirements_rop.txt
 ```
 
-Ejecución local del servicio web en producción (`FastAPI` en puerto `7860`):
+### 3. Ejecutar el servicio web en producción (`FastAPI` en puerto `7860`)
+
+Con el entorno virtual activado:
 ```bash
 cd produccion
-pip install -r requirements.txt
-uvicorn main:app --reload --port 7860
+pip install uvicorn fastapi
+python -m uvicorn main:app --reload --port 7860
 ```
+
+Cuando en la terminal aparezca `Application startup complete`, abrí en el navegador:
+- **Interfaz visual:** [http://127.0.0.1:7860/](http://127.0.0.1:7860/)
+- **Documentación interactiva (`/docs`):** [http://127.0.0.1:7860/docs](http://127.0.0.1:7860/docs)
+
+La terminal queda ocupada mientras el servidor está activo. Para detenerlo, presioná `Ctrl + C`.
+
+> Alternativa: `pip install -r requirements.txt` (dentro de `produccion/`) instala todas las dependencias del servicio de una sola vez.
 
 ## Fuente de los datos
 
